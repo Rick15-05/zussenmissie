@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>ZussenMissie – Top Secret</title>
+<style>
+body {
+  background-color: #000;
+  color: #0f0;
+  font-family: monospace;
+  text-align: center;
+  padding: 40px;
+}
+button {
+  background: #0f0;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.hidden { display: none; }
+.question { margin-top: 30px; }
+</style>
+</head>
+<body>
+<div id="start">
+  <h1>🕹️ ZUSSENMISSIE – TOP SECRET 🕹️</h1>
+  <p>Alleen geselecteerde agenten mogen deze missie uitvoeren.<br>Sanne &amp; Tessa, zijn jullie klaar?</p>
+  <button type="button" onclick="next('q1')">START MISSIE</button>
+</div>
+
+<div id="q1" class="hidden">
+  <h2>MISSIE 1: PANIEK-SCENARIO</h2>
+  <p>Je broer belt in paniek: hij zoekt zijn sokken.<br>Wat doe jij?</p>
+  <div class="question">
+    <button type="button" onclick="next('q2')">A) Ik kom eraan (en reageer later pas)</button><br>
+    <button type="button" onclick="next('q2')">B) Ik los het op en geef hem 2 weken schuldgevoel</button><br>
+    <button type="button" onclick="next('q2')">C) Ik film het voor TikTok</button>
+  </div>
+</div>
+
+<div id="q2" class="hidden">
+  <h2>MISSIE 2: TRAUMA- of THEATERHERKENNING</h2>
+  <p>Welk moment uit het verleden achtervolgt jou nog steeds?</p>
+  <div class="question">
+    <button type="button" onclick="next('q3')">A) De koude juspan die z’n eigen pad koos</button><br>
+    <button type="button" onclick="next('q3')">B) De Surinaamse juf met kussenbuik</button><br>
+    <button type="button" onclick="next('q3')">C) Allebei – en ik lach nog steeds harder dan gezond is</button>
+  </div>
+</div>
+
+<div id="q3" class="hidden">
+  <h2>MISSIE 3: INTUÏTIETEST</h2>
+  <p>Je broer gedraagt zich verdacht gelukkig.<br>Wat denk jij dat er aan de hand is?</p>
+  <div class="question">
+    <button type="button" onclick="next('end')">A) Hij is per ongeluk beroemd geworden</button><br>
+    <button type="button" onclick="next('end')">B) Hij heeft een midlifecrisis en koopt een alpaca</button><br>
+    <button type="button" onclick="next('end')">C) Er broeit iets groots, en hij is te kalm om zichzelf te zijn</button>
+  </div>
+</div>
+
+<div id="end" class="hidden">
+  <h2>🎉 MISSIE VOLTOOID 🎉</h2>
+  <p>Je hebt bewezen dat je loyaal, scherpzinnig en een tikje gestoord bent.<br>
+  Klaar voor jouw ultieme opdracht?</p>
+  <h3>💍 Wil jij mijn getuige zijn? 💍</h3>
+  <button type="button" onclick="alert('HELL YES, BRO!')">HELL YES, BRO</button>
+  <button type="button" onclick="alert('Prima, maar ik kies mijn eigen jurk!')">Onder één voorwaarde…</button>
+</div>
+
+<script>
+function next(target){
+  document.querySelectorAll('div').forEach(d => d.classList.add('hidden'));
+  document.getElementById(target).classList.remove('hidden');
+}
+</script>
+</body>
+</html>
